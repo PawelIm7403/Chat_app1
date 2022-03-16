@@ -2,6 +2,7 @@ package com.example.chat_app1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -27,12 +28,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(username.getText().toString().equals("admin") &&password.getText().toString().equals("admin")){
                     Toast.makeText(MainActivity.this,"Login Successfull",Toast.LENGTH_SHORT).show();
+
                 }
-                else{
-                    Toast.makeText(MainActivity.this,"Login Failed",Toast.LENGTH_SHORT).show();
+                else {
+                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                 }
+                openActivity2();
             }
         });
 
+    }
+
+    public void openActivity2(){
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
     }
 }
