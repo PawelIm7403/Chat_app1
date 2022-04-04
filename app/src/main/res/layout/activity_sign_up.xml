@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".SignUp">
 
     <TextView
         android:id="@+id/title"
@@ -22,6 +22,19 @@
         android:textSize="50dp"
         android:textStyle="bold" />
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:fontFamily="@font/advent_pro_extralight"
+        android:gravity="center"
+        android:text="@string/zaloz_konto"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,59 +44,40 @@
         android:hint="Username"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
-        android:layout_margin="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
         android:padding="20dp"
-        android:drawableLeft="@drawable/ic_baseline_person_pin_24"/>
+        />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
         android:background="#30ffffff"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:hint="Password"
         android:padding="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/createbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loginbtn"
         android:layout_below="@id/password"
-        android:text="LOGIN"
-        android:backgroundTint="#444"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/registerbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginbtn"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#444"
-        android:text="REGISTER" />
-
-    <TextView
-        android:id="@+id/forgotpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/registerbtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/forgot_password"
-        android:textColor="#ccc"
-        android:linksClickable="true"/>
+        android:text="Create"
+        android:layout_marginTop="15dp"
+        />
 
 
 </RelativeLayout>

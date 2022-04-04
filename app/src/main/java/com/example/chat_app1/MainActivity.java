@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,10 +24,13 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton loginbtn =(MaterialButton) findViewById(R.id.loginbtn);
         MaterialButton registerbtn =(MaterialButton) findViewById(R.id.registerbtn);
 
+        TextView forgotpass = (TextView) findViewById(R.id.forgotpass);
+        forgotpass.setMovementMethod(LinkMovementMethod.getInstance());
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(username.getText().toString().equals("admin") &&password.getText().toString().equals("admin")){
+                if(username.getText().toString().equals("drozan") &&password.getText().toString().equals("duzamaczeta")){
                     Toast.makeText(MainActivity.this,"Login Successfull",Toast.LENGTH_SHORT).show();
                     openActivity2();
 
@@ -37,10 +41,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        registerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSignUp();
+            }
+        });
+
     }
 
     public void openActivity2(){
         Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
+
+    public void openSignUp(){
+        Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
     }
 }
